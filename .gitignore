@@ -1,0 +1,8 @@
+# Ignore untracked files by default.
+*
+
+# Keep directories traversable so Markdown and PDF files can be included.
+!*/
+!*.md
+!*.pdf
+!.gitignore
