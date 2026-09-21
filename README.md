@@ -11,4 +11,6 @@ PDF versions with typeset mathematics are available in [`output/pdf`](output/pdf
 
 # Natural Deduction Builder
 
-The `natural-deduction-builder` folder contains a Natural Deduction creation tool to generate LaTeX natural deduction arguments.
+The `natural-deduction-builder` folder contains a Natural Deduction creation tool to generate LaTeX natural deduction arguments; this is used to assist writing the logic notes.
+
+
