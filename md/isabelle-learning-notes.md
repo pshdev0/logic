@@ -1,8 +1,8 @@
 # Background
 
-These notes document a tutor-assisted Isabelle/HOL learning project developed with Codex. The project formalises the explicit Stirling-number formula for the Akiyama–Tanigawa triangle that appears in [my Math StackExchange answer](https://math.stackexchange.com/questions/3824575/non-trivial-zeros-of-akiyama-tanigawa-triangle/4040754#4040754) to [this question](https://math.stackexchange.com/questions/3824575/non-trivial-zeros-of-akiyama-tanigawa-triangle). The triangle is also recorded as [OEIS A371763](https://oeis.org/A371763).
+These notes document an AI-tutor-assisted Isabelle/HOL learning project developed with Codex. The project formalises the explicit Stirling-number formula for the Akiyama–Tanigawa triangle that appears in [my Math StackExchange answer](https://math.stackexchange.com/questions/3824575/non-trivial-zeros-of-akiyama-tanigawa-triangle/4040754#4040754) to [this question](https://math.stackexchange.com/questions/3824575/non-trivial-zeros-of-akiyama-tanigawa-triangle). The triangle is also recorded as [OEIS A371763](https://oeis.org/A371763).
 
-The theory proves the explicit formula directly from the defining recurrence. It does not formalise the original complex-analytic derivation or attempt to classify all non-trivial zeros.
+The theory proves the explicit formula directly from the defining recurrence. It does not formalise my original complex-analytic derivation or attempt the (very difficult) problem of classifying all non-trivial zeros.
 
 My primary goal was to learn the fundamentals of machine-checked proof development in Isabelle. By completing the proof, I developed a working understanding of the mathematical purpose of each stage, the structure of the induction argument, and the role played by the principal Isabelle commands and library lemmas.
 
