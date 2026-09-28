@@ -159,3 +159,52 @@ An $\mathcal L_2$ structure $\mathcal A$ is a *counterexample* to an argument if
 
 # Natural Deduction
 
+>**Note:** the following notes use the `bussproof` which works with Obsidian, but this is easily adapted to `ebproof` or plain LaTeX instead.
+
+**Basics.**
+
+- As example, $P\wedge Q,P\to R\vdash P\lor Q$ reads as: the premises (left) *prove/derive* ($\vdash$) the conclusion $P\lor Q$, which is different from *logical implication* ($\vDash$) - see below.
+- The premises $P\wedge Q$ and $P\to R$  are free to use throughout the deduction.
+- As we proceed we may introduce temporary assumptions, e.g. $P$, but when an assumption is discharged by a rule we enclose it in square brackets $[P]$ to show it has been discharged.
+- Various rules are applied to deduce conclusions from premises, and so the proof tree builds until we reach the desired final conclusion. The rules are:
+	- $\wedge\;\mathrm{Intro}$ (*introduction*), $\wedge\;\mathrm{Elim}$ (*elimination*)
+	- $\lor\;\mathrm{Intro}_{1}$ (*left*), $\lor\;\mathrm{Intro}_{2}$ (*right*), $\lor\;\mathrm{Elim}$
+	- $\to\;\mathrm{Intro}$, $\to\;\mathrm{Elim}$
+	- $\neg\;\mathrm{Intro}$, $\neg\;\mathrm{Elim}$
+
+**Theorem (Soundness).** $\Gamma \vdash \varphi \Rightarrow \Gamma \vDash \varphi$.
+
+>If $\varphi$ is provable from $\Gamma$, then $\varphi$ is logically implied by $\Gamma$.
+
+**Theorem (Completeness).** $\Gamma \vDash \varphi \Rightarrow \Gamma \vdash \varphi$.
+
+>If $\varphi$ is logically implied by $\Gamma$, then $\varphi$ is provable from $\Gamma$.
+
+**Theorem (Adequacy).** $\Gamma \vDash \varphi \iff \Gamma \vdash \varphi$. 
+
+> $\Gamma \vdash \varphi$ means: there is a formal proof of $\varphi$ from $\Gamma$ using the allowed rules of deduction. Whereas $\Gamma \vDash \varphi$ means: in every interpretation where all sentences in $\Gamma$ are true, $\varphi$ is also true.
+> 
+> For example $P, P \rightarrow Q \vdash Q$ because $Q$ can be formally derived by modus ponens, and $P, P \rightarrow Q \vDash Q$ because there is no interpretation in which both premises are true and $Q$ is false.
+> 
+> So $\vdash$ is about proofs, whereas $\vDash$ is about truth in all models, i.e. logical consequence; when there are no premises, $\emptyset\vDash\varphi$, or simply $\vDash\varphi$, expresses logical validity, analogous to a _tautology_ in propositional logic.
+
+**Example 6.3** $P\lor Q,P\to R\vdash R\lor Q$.
+**Proof.**  
+$$\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$P \lor Q$}
+  \AxiomC{$[P]$}
+  \AxiomC{$P \to R$}
+  \RightLabel{$(\to\;\mathrm{Elim})$}
+  \BinaryInfC{$R$}
+  \RightLabel{$(\lor\;\mathrm{Intro}_{1})$}
+  \UnaryInfC{$R \lor Q$}
+  \AxiomC{$[Q]$}
+  \RightLabel{$(\lor\;\mathrm{Intro}_{2})$}
+  \UnaryInfC{$R \lor Q$}
+  \RightLabel{$(\lor\;\mathrm{Elim})$}
+  \TrinaryInfC{$R \lor Q$}
+\end{prooftree}$$
+**Explanation.**  The premises are $P\lor Q$ and $P\to R$. Since we know $P\lor Q$ we can assume $P$ in one branch and $Q$ in another and see if we can derive the conclusion $R\lor Q$ from each. With $P$ we know $R$ since $P\to R$. Now we can trivially introduce $R\lor Q$. On the other hand, if we assume $Q$ then we can trivially deduce $R\lor Q$. Finally, since $P\lor Q$, we have covered both branches and therefore $R\lor Q$.
+
+**TODO** - complete writing up my notes when I get some more time...
