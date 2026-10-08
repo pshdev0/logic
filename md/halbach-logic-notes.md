@@ -189,7 +189,7 @@ An $\mathcal L_2$ structure $\mathcal A$ is a *counterexample* to an argument if
 > So $\vdash$ is about proofs, whereas $\vDash$ is about truth in all models, i.e. logical consequence; when there are no premises, $\emptyset\vDash\varphi$, or simply $\vDash\varphi$, expresses logical validity, analogous to a _tautology_ in propositional logic.
 
 **Example 6.3** $P\lor Q,P\to R\vdash R\lor Q$.
-**Proof.**  
+**Proof.**
 $$\require{bussproofs}
 \begin{prooftree}
   \AxiomC{$P \lor Q$}
@@ -207,4 +207,35 @@ $$\require{bussproofs}
 \end{prooftree}$$
 **Explanation.**  The premises are $P\lor Q$ and $P\to R$. Since we know $P\lor Q$ we can assume $P$ in one branch and $Q$ in another and see if we can derive the conclusion $R\lor Q$ from each. With $P$ we know $R$ since $P\to R$. Now we can trivially introduce $R\lor Q$. On the other hand, if we assume $Q$ then we can trivially deduce $R\lor Q$. Finally, since $P\lor Q$, we have covered both branches and therefore $R\lor Q$.
 
-**TODO** - complete writing up my notes when I get some more time...
+**Example 6.4** $\neg(P\to Q)\vdash\neg Q$.
+**Proof.**
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$[Q]$}
+  \RightLabel{$(\to\;\mathrm{Intro})$}
+  \UnaryInfC{$P\to Q$}
+  \AxiomC{$\neg(P\to Q)$}
+  \RightLabel{$(\neg\;\mathrm{Intro})$}
+  \BinaryInfC{$\neg Q$}
+\end{prooftree}
+$$
+**Explanation.** To prove a negative such as $\neg Q$ we can use proof by contradiction. First assume $Q$, then by using ($\to$ Intro) we can introduce $P\to Q$. On the other hand, we already have the premise $\neg(P\to Q)$. Given we have reached both $\phi$ and $\neg\phi$ we conclude in fact $\neg Q$, i.e. our original assumption $Q$ must be false. **Note.** here we introduce a "$\neg$" hence ($\neg$ Intro), which contrasts with the next example of ($\neg$ Elim) to remove the "$\neg$".
+
+**Example 6.5** $\neg P\to Q,\neg Q\vdash P$.
+**Proof.**
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$[\neg P]$}
+  \AxiomC{$\neg P\to Q$}
+  \RightLabel{$(\to\;\mathrm{Elim})$}
+  \BinaryInfC{$Q$}
+  \AxiomC{$\neg Q$}
+  \RightLabel{$(\neg\;\mathrm{Elim})$}
+  \BinaryInfC{$P$}
+\end{prooftree}
+$$
+**Explanation.** Essentially this is just another proof by contradiction. We assume $\neg P$ and use the premise $\neg P\to Q$ which by ($\to$ Elim) gives $Q$, which together with $\neg Q$ forms a contradiction, so we may invoke ($\neg$ Elim) to discharge $\neg P$, and conclude $P$. Here, instead of introducing a negation as in Example 6.4, ($\neg$ Elim) discharges the negated assumption $\neg P$ and concludes the corresponding unnegated sentence $P$.
+
+TODO - continue to type up my book notes when I get time...
