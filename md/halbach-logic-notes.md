@@ -37,7 +37,7 @@ P \to \neg Q,\ Q \models \neg P.
 $$
 # Formalisation in Propositional Logic
 
-$L_1$ is the formal language of propositional logic: sentence letters such as $P$, $Q$, and $R$; connectives such as $\neg$, $\land$, $\lor$, $\to$, and $\leftrightarrow$; and formation rules determining which strings are sentences. For example, $\neg P$ and $(P \wedge Q)$ are sentences of $L_1$.
+ $L_1$ is the formal language of propositional logic: sentence letters such as $P$, $Q$, and $R$; connectives such as $\neg$, $\land$, $\lor$, $\to$, and $\leftrightarrow$; and formation rules determining which strings are sentences. For example, $\neg P$ and $(P \wedge Q)$ are sentences of $L_1$.
 
 ---
 A *propositional formula* is an expression built from sentence letters and connectives according to the formation rules. A *sentence* is a formula with no free variables. A sentence may be assigned a truth value relative to an interpretation or structure, e.g. a structure $A$ might assign $A(P)=\mathrm T$. (p. 87)
