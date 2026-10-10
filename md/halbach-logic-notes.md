@@ -285,4 +285,35 @@ $$
 $$
 **Explanation.** We have no premises with which to start, so (branch 1) first assume $P\to Q$ and $P$, to obtain $Q$ and assume $\neg Q$ to form a contradiction to introduce $\neg P$ which discharges $P$. Next, since $\neg Q$ up until now, we may  introduce $\neg Q\to\neg P$. On the other hand, (branch 2) assume $\neg Q\to\neg P$ and $\neg Q$ to obtain $\neg P$, then assume $P$ to reach a contradiction and eliminate to obtain $Q$, and discharge $\neg Q$, and then introduce $P\to Q$. Now, branch 1 gives $(P\to Q)\to(\neg Q\to\neg P)$ and branch 2 gives $(\neg Q\to\neg P)\to(P\to Q)$, hence we introduce (conclude) that $(P\to Q)\leftrightarrow(\neg Q\to\neg P)$, as required, which also discharges the initial branch assumptions $P\to Q$ and $\neg Q\to\neg P$.
 
+**Example 6.8** $\neg(Q\land\neg R)\vdash Q\to R$.
+**Proof.** 
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$\neg(Q\land \neg R)$}
+  \AxiomC{$[Q]$}
+  \AxiomC{$[\neg R]$}
+  \RightLabel{$(\wedge\;\mathrm{Intro})$}
+  \BinaryInfC{$Q\land\neg R$}
+  \RightLabel{$(\neg\;\mathrm{Elim})$}
+  \BinaryInfC{$R$}
+  \RightLabel{$(\to\;\mathrm{Intro})$}
+  \UnaryInfC{$Q\to R$}
+\end{prooftree}
+$$
+
+**Explanation.**  Assume $Q$ and $\neg R$ and introduce $Q\land\neg R$, then use the premise to reach a contradiction and eliminate $\neg R$ to obtain $R$. Finally introduce $Q\to R$ which discharges $Q$.
+
+**Example 6.9** $P,\neg P\vdash Q$.
+**Proof.**
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$P$}
+  \AxiomC{$\neg P$}
+  \BinaryInfC{$Q$}
+\end{prooftree}
+$$
+**Explanation.** Halbach's definition of ($\neg$ Elim) is "The result of appending a sentence $\phi$ to a proof of $\psi$ and a proof of $\neg\psi$ and of discharging **all** assumptions of $\neg\phi$ in both proofs is a proof of $\phi$." Note the word "all" could be replaced with "zero or more". Since there are no assumptions on $\neg Q$ then "all" here relates to zero cases, and as such the rule still applies, hence $Q$.
+
 TODO - continue to type up my book notes when I get time...
