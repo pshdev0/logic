@@ -311,6 +311,7 @@ $$
 \begin{prooftree}
   \AxiomC{$P$}
   \AxiomC{$\neg P$}
+  \RightLabel{$(\neg\;\mathrm{Elim})$}
   \BinaryInfC{$Q$}
 \end{prooftree}
 $$
