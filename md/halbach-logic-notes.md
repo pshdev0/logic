@@ -316,4 +316,6 @@ $$
 $$
 **Explanation.** Halbach's definition of ($\neg$ Elim) is "The result of appending a sentence $\phi$ to a proof of $\psi$ and a proof of $\neg\psi$ and of discharging **all** assumptions of $\neg\phi$ in both proofs is a proof of $\phi$." Note the word "all" could be replaced with "zero or more". Since there are no assumptions on $\neg Q$ then "all" here relates to zero cases, and as such the rule still applies, hence $Q$.
 
+## Predicate Logic
+
 TODO - continue to type up my book notes when I get time...
