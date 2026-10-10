@@ -238,4 +238,24 @@ $$
 $$
 **Explanation.** Essentially this is just another proof by contradiction. We assume $\neg P$ and use the premise $\neg P\to Q$ which by ($\to$ Elim) gives $Q$, which together with $\neg Q$ forms a contradiction, so we may invoke ($\neg$ Elim) to discharge $\neg P$, and conclude $P$. Here, instead of introducing a negation as in Example 6.4, ($\neg$ Elim) discharges the negated assumption $\neg P$ and concludes the corresponding unnegated sentence $P$.
 
+**Example 6.6** $\vdash P\lor\neg P$.
+**Proof.**
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$[P]$}
+  \RightLabel{$(\lor\;\mathrm{Intro}_{1})$}
+  \UnaryInfC{$P\lor\neg P$}
+  \AxiomC{$[\neg(P\lor\neg P)]$}
+  \RightLabel{$(\neg\;\mathrm{Intro})$}
+  \BinaryInfC{$\neg P$}
+  \RightLabel{$(\lor\;\mathrm{Intro}_{2})$}
+  \UnaryInfC{$P\lor \neg P$}
+  \AxiomC{$[\neg(P\lor\neg P)]$}
+  \RightLabel{$(\neg\;\mathrm{Elim})$}
+  \BinaryInfC{$P\lor\neg P$}
+\end{prooftree}
+$$
+**Explanation.** From the empty set $\emptyset$ we assume $P$, for we have no premises to use, and introduce $P\lor\neg P$. Next, assume $\neg(P\lor\neg P)$ to reach a contradiction, leading to the discharge of our first assumption $P$, i.e. $[P]$, and conclude the interim step $\neg P$. We then introduce $P\lor\neg P$ and again assume $\neg(P\lor\neg P)$, another contradiction through which negation elimination discharges the two $\neg(P\lor \neg P)$ terms to conclude $P\lor\neg P$, as required.
+
 TODO - continue to type up my book notes when I get time...
