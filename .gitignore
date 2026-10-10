@@ -6,3 +6,10 @@
 !*.md
 !*.pdf
 !.gitignore
+
+# Keep the reproducible Markdown-to-PDF exporter.
+!scripts/export-pdfs.sh
+!scripts/pdf-support/isabelle.xml
+!scripts/pdf-support/markdown-to-pdf.lua
+!scripts/pdf-support/normalize-markdown.pl
+!scripts/pdf-support/pdf-header.tex

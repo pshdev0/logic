@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="Isabelle" section="Sources" version="1" kateversion="5.0" extensions="*.thy" mimetype="text/x-isabelle">
+  <highlighting>
+    <list name="keywords">
+      <item>theory</item><item>imports</item><item>begin</item><item>end</item>
+      <item>definition</item><item>fun</item><item>primrec</item><item>abbreviation</item>
+      <item>lemma</item><item>theorem</item><item>corollary</item><item>proposition</item>
+      <item>proof</item><item>qed</item><item>by</item><item>using</item><item>unfolding</item>
+      <item>assume</item><item>show</item><item>have</item><item>hence</item><item>then</item>
+      <item>from</item><item>with</item><item>next</item><item>case</item><item>fix</item>
+      <item>obtain</item><item>where</item><item>let</item><item>note</item><item>also</item>
+      <item>finally</item><item>moreover</item><item>ultimately</item>
+      <item>if</item><item>then</item><item>else</item><item>for</item><item>and</item>
+      <item>value</item><item>term</item><item>thm</item><item>find_theorems</item>
+    </list>
+    <contexts>
+      <context name="Normal" attribute="Normal Text" lineEndContext="#stay">
+        <DetectSpaces/>
+        <RegExpr attribute="Comment" context="Comment" String="\(\*" beginRegion="Comment"/>
+        <DetectChar attribute="String" context="String" char="&quot;"/>
+        <keyword attribute="Keyword" context="#stay" String="keywords"/>
+        <RegExpr attribute="DataType" context="#stay" String="\b(?:nat|int|rat|real|bool|list|set)\b"/>
+        <RegExpr attribute="Operator" context="#stay" String="\\&lt;[A-Za-z_]+&gt;|==&gt;|==|=&gt;|::|[=+*/^&lt;&gt;-]"/>
+        <RegExpr attribute="DecVal" context="#stay" String="\b[0-9]+\b"/>
+      </context>
+      <context name="Comment" attribute="Comment" lineEndContext="#stay">
+        <RegExpr attribute="Comment" context="Comment" String="\(\*" beginRegion="Comment"/>
+        <RegExpr attribute="Comment" context="#pop" String="\*\)" endRegion="Comment"/>
+      </context>
+      <context name="String" attribute="String" lineEndContext="#stay">
+        <HlCStringChar/>
+        <DetectChar attribute="String" context="#pop" char="&quot;"/>
+      </context>
+    </contexts>
+    <itemDatas>
+      <itemData name="Normal Text" defStyleNum="dsNormal"/>
+      <itemData name="Keyword" defStyleNum="dsKeyword"/>
+      <itemData name="DataType" defStyleNum="dsDataType"/>
+      <itemData name="Operator" defStyleNum="dsOperator"/>
+      <itemData name="DecVal" defStyleNum="dsDecVal"/>
+      <itemData name="String" defStyleNum="dsString"/>
+      <itemData name="Comment" defStyleNum="dsComment"/>
+    </itemDatas>
+  </highlighting>
+  <general>
+    <comments><comment name="multiLine" start="(*" end="*)" region="Comment"/></comments>
+  </general>
+</language>

@@ -1,0 +1,20 @@
+\usepackage{bussproofs}
+\usepackage{microtype}
+\usepackage{fvextra}
+\usepackage{newunicodechar}
+
+\newfontfamily\logicSymbols{Apple Symbols}
+\newcommand{\LogicCommand}{{\logicSymbols ⌘}}
+\newcommand{\LogicLongImplies}{{\logicSymbols ⟹}}
+\newcommand{\LogicSum}{{\logicSymbols ∑}}
+
+\newunicodechar{⌘}{\LogicCommand}
+\newunicodechar{⟹}{\LogicLongImplies}
+\newunicodechar{∑}{\LogicSum}
+
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small
+}
