@@ -258,4 +258,31 @@ $$
 $$
 **Explanation.** From the empty set $\emptyset$ we assume $P$, for we have no premises to use, and introduce $P\lor\neg P$. Next, assume $\neg(P\lor\neg P)$ to reach a contradiction, leading to the discharge of our first assumption $P$, i.e. $[P]$, and conclude the interim step $\neg P$. We then introduce $P\lor\neg P$ and again assume $\neg(P\lor\neg P)$, another contradiction through which negation elimination discharges the two $\neg(P\lor \neg P)$ terms to conclude $P\lor\neg P$, as required.
 
+**Example 6.7** $\vdash(P\to Q)\leftrightarrow(\neg Q\to \neg P)$ .
+**Proof.**
+$$
+\require{bussproofs}
+\begin{prooftree}
+  \AxiomC{$[P\to Q]$}
+  \AxiomC{$[P]$}
+  \BinaryInfC{$Q$}
+  \AxiomC{$[\neg Q]$}
+  \RightLabel{$(\neg\;\mathrm{Intro})$}
+  \BinaryInfC{$\neg P$}
+  \RightLabel{$(\to\;\mathrm{Intro})$}
+  \UnaryInfC{$\neg Q\to\neg P$}
+  \AxiomC{$[\neg Q\to \neg P]$}
+  \AxiomC{$[\neg Q]$}
+  \BinaryInfC{$\neg P$}
+  \AxiomC{$[P]$}
+  \RightLabel{$(\neg\;\mathrm{Elim})$}
+  \BinaryInfC{$Q$}
+  \RightLabel{$(\to\;\mathrm{Intro})$}
+  \UnaryInfC{$P\to Q$}
+  \RightLabel{$(\leftrightarrow\;\mathrm{Intro})$}
+  \BinaryInfC{$(P\to Q)\leftrightarrow(\neg Q\to\neg P)$}
+\end{prooftree}
+$$
+**Explanation.** We have no premises with which to start, so (branch 1) first assume $P\to Q$ and $P$, to obtain $Q$ and assume $\neg Q$ to form a contradiction to introduce $\neg P$ which discharges $P$. Next, since $\neg Q$ up until now, we may  introduce $\neg Q\to\neg P$. On the other hand, (branch 2) assume $\neg Q\to\neg P$ and $\neg Q$ to obtain $\neg P$, then assume $P$ to reach a contradiction and eliminate to obtain $Q$, and discharge $\neg Q$, and then introduce $P\to Q$. Now, branch 1 gives $(P\to Q)\to(\neg Q\to\neg P)$ and branch 2 gives $(\neg Q\to\neg P)\to(P\to Q)$, hence we introduce (conclude) that $(P\to Q)\leftrightarrow(\neg Q\to\neg P)$, as required, which also discharges the initial branch assumptions $P\to Q$ and $\neg Q\to\neg P$.
+
 TODO - continue to type up my book notes when I get time...
